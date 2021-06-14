@@ -1,5 +1,11 @@
 # Vue 3 + Typescript + Vite
 
+## Todo
+
+- [x] Add jest for unit testing
+- [x] Add Vue Router
+- [ ] Add scss or learn about PostCSS
+
 This template should help get you started developing with Vue 3 and Typescript in Vite.
 
 ## Recommended IDE Setup
