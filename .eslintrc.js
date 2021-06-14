@@ -4,6 +4,7 @@ module.exports = {
     node: true,
   },
   plugins: [
+    'import',
     'vuejs-accessibility',
   ],
   extends: [
@@ -13,6 +14,16 @@ module.exports = {
   ],
   parserOptions: {
     parser: '@typescript-eslint/parser',
+  },
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts'],
+    },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -25,6 +36,14 @@ module.exports = {
       ],
       env: {
         jest: true,
+      },
+    },
+    {
+      files: [
+        './*',
+      ],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
       },
     },
   ],
