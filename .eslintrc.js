@@ -9,8 +9,9 @@ module.exports = {
   ],
   extends: [
     'plugin:vue/vue3-recommended',
-    'plugin:vuejs-accessibility/recommended',
     '@vue/airbnb',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:vuejs-accessibility/recommended',
   ],
   parserOptions: {
     parser: '@typescript-eslint/parser',
@@ -28,6 +29,8 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    indent: 'off',
+    '@typescript-eslint/indent': ['error', 2],
   },
   overrides: [
     {
@@ -44,6 +47,12 @@ module.exports = {
       ],
       rules: {
         'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      files: '*.html',
+      rules: {
+        'vue/comment-directive': 'off',
       },
     },
   ],

@@ -2,6 +2,8 @@ module.exports = {
   preset: '@vue/cli-plugin-unit-jest',
   transform: {
     '^.+\\.vue$': 'vue-jest',
+    '^.+\\.tsx?$': 'ts-jest',
   },
-  testMatch: ['**/*.test.js'],
+  testMatch: ['<rootDir>/**/*.test.js'],
+  rootDir: './src/',
 };
